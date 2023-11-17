@@ -43,8 +43,6 @@ $routes->get('logout', 'AuthController::logout');
 $routes->get('painelusuario', 'PainelSistema::painelUsuario'); 
 $routes->get('meusimoveis', 'PainelSistema::meusImoveis');
 
-
-
 $routes->get('editarmeusdados', 'EditarDados::editarMeusDados');
 $routes->post('enviaremail', 'EditarDados::enviarEmail');
 $routes->get('editarsenha', 'EditarDados::viewNovaSenha');
