@@ -77,7 +77,7 @@ body{
     width: 1300px;
     position: absolute;
     left: 50%;
-    top: 18%;
+    top: 20%;
     transform: translate(-50%, -50%);
    
 }
@@ -117,9 +117,8 @@ body{
     padding: 9px;
     border-radius: 12px;
     position: absolute;
-    left: 6%;
-    top: 17%;
-    margin-top: 5%;
+    left: 10%;
+    top: 24%;
 }
 
 .link-anuncie:hover{
@@ -152,8 +151,8 @@ body{
 
 .texto-superior-esquerdo {
     position: absolute;
-    top: 9%;
-    left: 7%;
+    top: 11%;
+    left: 9.5%;
 }
 
 .sobre {
