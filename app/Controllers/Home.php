@@ -11,11 +11,15 @@ class Home extends BaseController
         $imoveis = $imovelModel->getimovel ();
 
        
+        $session = session();
+        
+        $usuario = $session->get('usuario');
+
+        
         $dadosImoveis = [
-            'imoveis' => $imoveis
+            'imoveis' => $imoveis,
+            'usuario' => $usuario
         ];
-
-
 
         return view ('index', $dadosImoveis);
     }

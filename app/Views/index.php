@@ -13,6 +13,21 @@
     </style>
 </head>
 
+<script>
+
+    window.onload = function() {
+        
+        var sessaoExistente = <?= json_encode($usuario) ?>;
+        function verificarSessao() {
+            if (sessaoExistente) {
+                document.getElementById("login").innerHTML = ' <li ><a href="<?= base_url('painelusuario');?>" style=" border: none; padding: 0; background-color: black; border-radius: 0px;"><img src="icons/minhaconta.png" alt="Img minha conta" style="width: 40px; height:35px; margin-left: 2px; " > <p style="width: 118px; margin-bottom: 24px; margin-top: -12px; margin-left: -35px;"> Minha Conta</p></a></li>  ';
+            }
+        }
+
+       verificarSessao();
+    }
+</script>
+
 <body>
 
     <header>
