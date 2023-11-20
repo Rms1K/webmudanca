@@ -60,7 +60,7 @@ class AuthController extends BaseController
     {
 
         $session = session();
-
+        $session->destroy(); // limpar todas as informações da sessão e outra pessao não utilize os dados
         $session->remove('usuario');
 
         return redirect()->to(base_url('/'));
