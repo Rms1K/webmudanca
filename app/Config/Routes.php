@@ -60,6 +60,7 @@ $routes->get('dadosimoveis', 'Cadastros::DadosImoveis');
 $routes->post('dadoscadastro', 'Cadastros::dadosCadastro');
 
 
+$routes->post('dadospesquisa', 'BarraPesquisa::dadosPesquisa');
 
 /*
  * --------------------------------------------------------------------

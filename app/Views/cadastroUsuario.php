@@ -50,6 +50,11 @@
                 <label for="email">Endereço de e-mail:</label>
                 <input type="email" id="email" name="email" required>
 
+          
+
+                <label for="telefone_contato">Número de telefone:</label>
+                <input type="tel" id="telefone_contato" name="telefone_contato" required>
+                    
 
 
                 <label for="senha">Senha:</label>

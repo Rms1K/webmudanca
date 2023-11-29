@@ -58,7 +58,7 @@
                         <!-- Informações Básicas  -->
                         <input type="hidden" id="usuario" name="usuario" value="<?= $usuario ?>">
 
-                        <div class="divForm-tipo">
+                        <div class="divForm-tipo aluguel_venda">
                             <select name="aluguel_venda" id="aluguel_venda">
                                 <option value="aluguel">Aluguel</option>
                                 <option value="venda">Venda</option>
@@ -103,8 +103,6 @@
 
                     <div class="divForm-addImgs">
 
-
-
                         <label for="imagens">Adicionar imagens:</label>
                         <input type="file" id="imagens" name="arquivo" multiple accept="image/*" required>
 
@@ -134,19 +132,6 @@
                         <input type="text" id="cep" name="cep" required>
                     </div>
 
-
-                    <div class="divForm-contato">
-
-
-                        <label for="nome_contato">Nome do proprietário ou agente responsável:</label>
-                        <input type="text" id="nome_contato" name="nome_contato" required>
-
-                        <label for="email_contato">E-mail de contato:</label>
-                        <input type="email" id="email_contato" name="email_contato" required>
-
-                        <label for="telefone_contato">Número de telefone:</label>
-                        <input type="tel" id="telefone_contato" name="telefone_contato" required>
-                    </div>
 
                     <div class="divForm-termo">
                         <label for="termos_condicoes">Aceitar termos e condições:</label>

@@ -23,21 +23,24 @@ class Cadastros extends BaseController
         
         return view ('cadastrousuario', $dadosView);
     }
-
+ 
     public function dadosCadastro()
     {
         $nome = $this->request->getPost('nome');
         $usuario = $this->request->getPost('usuario');
         $email = $this->request->getPost('email');
+        $telefone_contato = $this->request->getPost('telefone_contato');
         $senha = $this->request->getPost('senha');
         $Confirmasenha = $this->request->getPost('confirma_senha');
         $dataNasc = $this->request->getPost('data_nascimento');
         $genero = $this->request->getPost('genero');
 
+       
         $dados = [
             'nomecompleto' => $nome,
             'usuario' => $usuario,
             'email' => $email,
+            'telefone' => $telefone_contato,
             'senha' => $senha,
             'dataNascimento' => $dataNasc,
             'genero' => $genero
@@ -112,6 +115,8 @@ class Cadastros extends BaseController
         }
 
 
+       
+
         $imovelData = [
             'Usuario' => $usuario,
             'Tipo' => $tipo,
@@ -130,40 +135,11 @@ class Cadastros extends BaseController
         
         $imovel = $imovelModel->getimovel();
         $qtdImovel = count($imovel)-1;
-         
-        
-        
-        $nomeProprietario = $this->request->getPost('nome_contato');
-        $emailProprietario = $this->request->getPost('email_contato');
-        $telefoneProprietario = $this->request->getPost('telefone_contato');
-
-        
-         $proprietarioData = [
-            'Nome' => $nomeProprietario,
-            'Email' => $emailProprietario,
-            'Telefone' => $telefoneProprietario
-        ];
-
-
-        $proprietarioModel = new \App\Models\proprietarioModel();
-        $proprietarioModel->insert($proprietarioData);
-
-        $proprietario = $proprietarioModel->getProprietarios($nomeProprietario,$emailProprietario);
-        $QtdProprietarios = count($proprietario)-1;
-
-
-        //Pegando o Id do proprietario 
-        $ID_Proprietario = $proprietarioModel->getIdProprietario($nomeProprietario,$emailProprietario);
 
         
 
-        //Relacionando com o imóvel 
-        $imovelModel->set('ID_Proprietario', $ID_Proprietario[$QtdProprietarios]);
-        $imovelModel->where('ID_imovel', $imovel[$qtdImovel]['ID_imovel']);
-        $imovelModel->update();
-       
-
-
+ 
+         //Cadastrando endereço do imovel no BD
        
         $Rua = $this->request->getPost('endereco');
         $numImovel = $this->request->getPost('numImovel');
@@ -186,20 +162,31 @@ class Cadastros extends BaseController
          $enderecoModel->insert($enderecoData);
 
       
-         $Endereco_ID = $enderecoModel->getIdEndereco($Rua,$numImovel);
+        $Endereco_ID = $enderecoModel->getIdEndereco($Rua,$numImovel);
         
          
          $endereco= $enderecoModel->getEnderecos($Rua,$numImovel);
          $qtdEndereco = count($endereco)-1;
         
+        // Relacionando o endereço e o usuario com o imovel
+
+        $usuarioModel = new \App\Models\UsuarioModel();
+
+        $session = session();
+        
+        $usuario = $session->get('usuario');
+        
+        $idUsuario = $usuarioModel->getIdUsuario($usuario);
+
+        
+
         $imovelModel->set('ID_Endereco', $Endereco_ID[$qtdEndereco]);
+        $imovelModel->set('ID_Usuario', $idUsuario[0]);
         $imovelModel->where('ID_imovel', $imovel[$qtdImovel]['ID_imovel']);
         $imovelModel->update();
         
 
-       
-
-         $session = session();
+    
          
          $session->setFlashdata('msgConfirmaCadastro', 'Imóvel Cadastrado com sucesso!');
          return redirect()->to(base_url('cadastraImoveis'));

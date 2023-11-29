@@ -140,15 +140,27 @@ body{
 
 .divForm-infosBasicas{
     position: absolute;
-    left: 20px;
-    top: 60px;
+    left: 300px;
+    top: 131px;
     color: white;
 }
 
-.divForm-descricao{
+.tipoImovel{
+    position: absolute;
+    left: -120px;
+    top: -60px;
+}
+
+.aluguel_venda{
+    position: absolute;
+    left: -280px;
+    top: -60px;
+
+}
+.infosImovel{
     position: absolute;
     left: 20px;
-    top: 200px;
+    top: 20px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -156,27 +168,19 @@ body{
 
 .divForm-Localizacao{
     position: absolute;
-    left: 300px;
-    top: 131px;
+    left: 20px;
+    top: 150px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
  
 }
 
-.divForm-contato{
-    position: absolute;
-    left: 600px;
-    top: 130px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
 
 .divForm-addImgs{
     position: absolute;
     left: 600px;
-    top: 370px;
+    top: 155px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -184,14 +188,14 @@ body{
 
 .divForm-termo{
     position: absolute;
-    left: 20px;
-    top: 460px;
+    left: 600px;
+    top: 390px;
 }
 
 .divForm-btnCadastrar{
     position: absolute;
-    left: 20px;
-    top: 510px;
+    left: 600px;
+    top: 415px;
 }
 
 .divForm-btnCadastrar button {
@@ -215,16 +219,7 @@ body{
     cursor: pointer;
 }
 
-.tipoImovel{
-    left: 170px;
-    top: 0px;
-    position: absolute;
-}
 
-.infosImovel{
-    top: 70px;
-    position: absolute;
-}
 
 .alert {
     width: 300px;

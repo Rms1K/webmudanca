@@ -14,7 +14,7 @@ class UsuarioModel extends Model
     protected $returnType     = 'array';
     protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['nomecompleto','usuario','email','senha','dataNascimento','genero'];
+    protected $allowedFields = ['nomecompleto','usuario','email','senha','telefone','dataNascimento','genero'];
 
     // Dates
     protected $useTimestamps = false;
@@ -85,6 +85,20 @@ class UsuarioModel extends Model
     public function getEmail ($email){
 
         $query = $this->db->table('usuario')->select('email')->where('email', $email)->get();
+
+        if($this->returnType == 'object'){
+            return $query->getResult();
+        }else{
+            return $query->getResultArray();
+        }
+
+        return $query->getResult();
+
+    }
+
+    public function getIdUsuario ($usuario){
+
+        $query = $this->db->table('usuario')->select('ID_Usuario')->where('usuario', $usuario)->get();
 
         if($this->returnType == 'object'){
             return $query->getResult();

@@ -14,7 +14,7 @@ class imovelModel extends Model
     protected $returnType     = 'array';
     protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['Usuario','Tipo','Aluguel_Venda','Preco', 'Area','NumeroQuartos','NumeroBanheiros','NumeroVagasGaragem','Imagens','ID_Proprietario','ID_Endereco'];
+    protected $allowedFields = ['Usuario','Tipo','Aluguel_Venda','Preco', 'Area','NumeroQuartos','NumeroBanheiros','NumeroVagasGaragem','Imagens','ID_Endereco','ID_Usuario'];
 
     // Dates
     protected $useTimestamps = false;

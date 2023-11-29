@@ -56,18 +56,18 @@
         </div>
 
         <div class="form-pesquisa">
-            <form method="GET" action="">
-                <select name="aluguel_venda" id="tipo">
+            <form method="POST" action="<?= base_url('dadospesquisa'); ?>">
+                <select name="aluguel_venda" id="aluguel_venda">
                     <option value="aluguel">Aluguel</option>
                     <option value="venda">Venda</option>
                 </select>
-                <select name="tipo">
+                <select name="tipoImovel" id="tipoImovel">
                     <option value="">Tipo de imóvel</option>
                     <option name="tipo" value="casa">Casa</option>
                     <option name="tipo" value="apartamento">Apartamento</option>
                     <option name="tipo" value="terreno">Terreno</option>
                 </select>
-                <input class="input-pesquisa" type="text" name="bairro" placeholder="Digite um bairro, rua ou cidade">
+                <input class="input-pesquisa"  type="text" name="enderecoImovel" placeholder="Digite um bairro, rua ou cidade">
                 <input class="btn-pesquisar" type="submit" value="Encontrar Imóvel">
             </form>
         </div>
