@@ -136,19 +136,36 @@ body{
 
 .bnt-ver{
     position: absolute;
-    right: 80px;
+    left: 25px;
     top: 245px;
-    color: whitesmoke;
+
 }
 
-.bnt-ver a{
+.bnt-editar{
     position: absolute;
-    right: 20px;
+    left: 135px;
+    top: 245px;
+    width: 70px;
+    margin: auto;
+}
+
+.bnt-Excluir{
+    position: absolute;
+    left: 220px;
+    top: 245px;
+    width: 70px;   
+}
+.bnt-ver a, .bnt-editar a, .bnt-Excluir a{
+    /* position: absolute;
+    right: 20px; */
     color: whitesmoke;
     background-color: rgb(255, 140, 0);
     border-radius: 8px;
-    width: 100px;
+    /* width: 100px; */
     padding: 6px;
+    display: flex;
+    flex-direction: row;
+    
 }
 
 

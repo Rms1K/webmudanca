@@ -38,9 +38,13 @@ class AuthController extends BaseController
 
         $usuarioModel = new \App\Models\UsuarioModel();
 
-        if ($usuarioModel->AuthLogin($usuario, $senha)){
+
+        $senhaCriptografadaDoBanco = $usuarioModel->getSenha($usuario);
 
 
+
+        if (password_verify($senha, $senhaCriptografadaDoBanco[0]['senha'])) {
+            
             $dadosSessao = [
                 'usuario' => $usuario
             ];
@@ -48,11 +52,12 @@ class AuthController extends BaseController
             $session->set($dadosSessao);
 
             return redirect()->to(base_url('painelusuario'));
-        }else{
 
-            $session->setFlashdata('msgErro', 'Usuário ou senha inválidos!');
+        } else {
+             $session->setFlashdata('msgErro', 'Usuário ou senha inválidos!');
             return redirect()->to(base_url('login'));
         }
+
 
     }
   
@@ -60,7 +65,7 @@ class AuthController extends BaseController
     {
 
         $session = session();
-        $session->destroy(); // limpar todas as informações da sessão e outra pessao não utilize os dados
+        $session->destroy(); 
         $session->remove('usuario');
 
         return redirect()->to(base_url('/'));

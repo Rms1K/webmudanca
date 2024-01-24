@@ -35,13 +35,14 @@ class Cadastros extends BaseController
         $dataNasc = $this->request->getPost('data_nascimento');
         $genero = $this->request->getPost('genero');
 
-       
+        $senhaCriptografada = password_hash($senha, PASSWORD_BCRYPT);
+
         $dados = [
             'nomecompleto' => $nome,
             'usuario' => $usuario,
             'email' => $email,
             'telefone' => $telefone_contato,
-            'senha' => $senha,
+            'senha' => $senhaCriptografada,
             'dataNascimento' => $dataNasc,
             'genero' => $genero
         ];

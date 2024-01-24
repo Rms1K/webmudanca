@@ -59,8 +59,18 @@
                         
                         <div class="preco-botao">
                            
-                            <div class="bnt-ver">
+                            <div class="bnt bnt-ver">
                              <a href="<?= base_url('imovel/' . $i['ID_imovel'])?>">Ver Anuncio</a>
+                           
+                            </div>
+                            <div class="bnt bnt-editar">
+                            
+                             <a href="">Editar</a>
+                             
+                            </div>
+                            <div class="bnt bnt-Excluir">
+                             
+                             <a href="">Excluir</a>
                             </div>
                         </div>
                     </div>

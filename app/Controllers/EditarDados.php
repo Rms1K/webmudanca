@@ -40,7 +40,7 @@ class EditarDados extends BaseController
         $nome = $this->request->getPost('nomecompleto');
         $usuario = $this->request->getPost('usuario');
         $email = $this->request->getPost('email');
-        $senha = $this->request->getPost('senha');
+        $telefone = $this->request->getPost('telefone');
         $dataNasc = $this->request->getPost('data_nascimento');
         $genero = $this->request->getPost('genero');
 
@@ -50,7 +50,7 @@ class EditarDados extends BaseController
         $usuarioModel->set('nomecompleto', $nome);
         $usuarioModel->set('usuario', $usuario);
         $usuarioModel->set('email', $email);
-        $usuarioModel->set('senha', $senha);
+        $usuarioModel->set('telefone', $telefone);
         $usuarioModel->set('dataNascimento', $dataNasc);
         $usuarioModel->set('genero', $genero);
         $usuarioModel->where('ID_Usuario', $id);
@@ -93,9 +93,11 @@ class EditarDados extends BaseController
         $senhanova = $this->request->getPost('senha');
         $emailConfirmacao = $this->request->getPost('emailConfirmacao');
 
+        $senhaCriptografada = password_hash($senhanova, PASSWORD_BCRYPT);
+
         $usuarioModel = new \App\Models\UsuarioModel();
 
-        $usuarioModel->set('senha', $senhanova);
+        $usuarioModel->set('senha', $senhaCriptografada);
         $usuarioModel->where('email', $emailConfirmacao);
         $usuarioModel->update();
 

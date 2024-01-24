@@ -110,6 +110,20 @@ class UsuarioModel extends Model
 
     }
 
+    public function getSenha ($usuario){
+
+        $query = $this->db->table('usuario')->select('senha')->where('usuario', $usuario)->get();
+
+        if($this->returnType == 'object'){
+            return $query->getResult();
+        }else{
+            return $query->getResultArray();
+        }
+
+        return $query->getResult();
+
+    }
+
     public function AuthLogin($usuario, $senha) {
         
         $query = $this->db->table('usuario')

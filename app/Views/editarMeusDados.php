@@ -101,8 +101,8 @@
 
 
                 <div class="inputBox">
-                    <label class="labelInput" for="senha">Senha:</label>
-                    <input class="inputUser" type="text" id="senha" name="senha" value="<?= $usuario[0]['Senha'] ?>">
+                    <label class="labelInput" for="senha">Telefone:</label>
+                    <input class="inputUser" type="text" id="telefone" name="telefone" value="<?= $usuario[0]['telefone'] ?>">
                 </div>
 
 
@@ -134,9 +134,10 @@
             <form id="formulario-excluirConta" action="<?= base_url('excluirconta') ?>" method="post">
                 <input id="bnt-ExcluirConta" type="submit" value="Excluir Conta">
                 <input type="hidden" id="Usuario" name="Usuario" value="<?= $usuario[0]['Usuario'] ?>">
-                <input type="hidden" id="ID_Endereco" name="ID_Endereco" value="<?= $imovel[0]['ID_Endereco'] ?>">
-                <input type="hidden" id="ID_Proprietario" name="ID_Proprietario" value="<?= $imovel[0]['ID_Proprietario'] ?>">
-                <input type="hidden" id="ID_imovel" name="ID_imovel" value="<?= $imovel[0]['ID_imovel'] ?>">
+                <input type="hidden" id="ID_Endereco" name="ID_Endereco" <?php if(isset($u['ID_Endereco'])) { echo 'value="' . $imovel[0]['ID_Endereco'] . '"'; } ?>>
+                
+                <input type="hidden" id="ID_Proprietario" name="ID_Proprietario" <?php if(isset($u['ID_Proprietario'])) { echo 'value="' . $imovel[0]['ID_Proprietario'] . '"'; } ?>>
+                <input type="hidden" id="ID_imovel" name="ID_imovel" <?php if(isset($u['ID_imovel'])) { echo 'value="' . $imovel[0]['ID_imovel'] . '"'; } ?>>
             </form>
         </fieldset>
 
