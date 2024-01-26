@@ -1,0 +1,212 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    background-image: url(../../../m/public/img/preto-fosco.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#nav {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+
+}
+
+.logo {
+    width: 150px;
+    height: 10vh;
+    margin-left: 20px;
+}
+
+body {
+    position: relative;
+}
+
+#nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+
+    
+}
+
+#nav ul li {
+    letter-spacing: 3px;
+    margin-left: 32px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+#nav a {
+    color: white;
+}
+
+#nav ul li a:hover {
+    color: rgb(255, 140, 0);
+    font-weight: 500;
+
+}
+
+
+#login a {
+    border: 2px solid rgb(255, 140, 0);
+    border-radius: 8px;
+    background-color: rgb(255, 140, 0);
+    padding: 9px;
+
+}
+
+#login a:hover {
+    background-color: black;
+    color: rgb(255, 140, 0);
+    cursor: pointer;
+}
+
+
+/* Fim do NAV  */
+
+main{
+    position: relative;
+    width: 100vw;
+    height: 90vh;
+    color: whitesmoke;
+}
+
+.fotos{
+    width: 550px;
+    height: 400px;
+    position: absolute;
+    left: 100px;
+    top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sessaoContainer{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 100%;
+    height: 500px;
+    
+}
+
+.informacoes ul{
+    display: flex;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 50px;
+    left: 210px;
+}
+.informacoes ul li {
+    margin: 10px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    row-gap: 10px;
+}
+.informacoes ul li img{
+    width: 30px;
+}
+
+.informacoes ul li hr{
+    width: 50px;
+}
+
+.informacoes a {
+    background-color: rgb(255, 140, 0);
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 8px;
+    color: whitesmoke;
+    margin-top: 15px;
+}
+
+.informacoes{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.informacoes div img{
+    width: 40px;
+}
+.informacoes div{
+    display: flex;
+    align-items: center;
+    flex-flow: row nowrap;
+    color: whitesmoke;
+}
+
+
+.fotos img {
+    width: 550px;
+    height: 400px;
+    margin: 15px;
+}
+
+.valor{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: whitesmoke;
+    font-size: 24px;
+    position: absolute;
+
+    left: 700px;
+    top: 50px;
+}
+
+.valor img{
+    width: 60px;
+    
+}
+
+.maisInformacoes{
+    position: absolute;
+    left: 700px;
+    top: 170px;
+}
+
+.maisInformacoes img {
+    margin-top: 50px;
+    width: 600px;
+
+}
+
+
+
+.fotos h2 {
+    font-size: 24px;
+    color: whitesmoke; 
+    margin-top: 10px;  
+}
+.fotos h2::first-letter {
+    text-transform: uppercase;
+}
+
+.fotos h2 span::first-letter {
+    text-transform: uppercase;
+}

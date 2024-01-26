@@ -110,11 +110,10 @@ class Cadastros extends BaseController
         $img = $this->request->getFile('arquivo');
 
      
-        if($img->isValid() && ! $img-> hasMoved()){
+        if($img->isValid() && ! $img->hasMoved()){
             $imgName = $img->getRandomName();
             $img->move('uploads', $imgName);
         }
-
 
        
 

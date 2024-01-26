@@ -63,5 +63,14 @@ class Home extends BaseController
         return view ('viewImovel', $dadosImovel);
     }
 
+    public function Sobre()
+    {
+
+
+        
+        return view ('viewSobre');
+    }
+    
+
 }
 

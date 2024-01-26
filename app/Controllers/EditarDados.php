@@ -160,7 +160,7 @@ class EditarDados extends BaseController
         
         $Usuario = $this->request->getPost('Usuario');
         $ID_Endereco = $this->request->getPost('ID_Endereco');
-        $ID_Proprietario = $this->request->getPost('ID_Proprietario');
+        
         
 
         $imovelModel = new \App\Models\ImovelModel();
@@ -174,13 +174,7 @@ class EditarDados extends BaseController
         $enderecoModel->where('ID_Endereco',  $ID_Endereco);
         $enderecoModel->delete();
 
-        
-        $proprietarioModel = new \App\Models\proprietarioModel();
-
-        $proprietarioModel->where('ID_Proprietario',  $ID_Proprietario);
-        $proprietarioModel->delete();
-
-
+   
         $usuarioModel = new \App\Models\UsuarioModel();
 
 
@@ -194,6 +188,32 @@ class EditarDados extends BaseController
 
         return redirect()->to(base_url('/'));
             
+    }
+
+    public function excluirImovel()
+    {
+
+        $ID_imovel = $this->request->getPost('ID_imovel');
+
+        $imovelModel = new \App\Models\ImovelModel();
+
+        $ID_enderecoImovel = $imovelModel->getEnderecoImovel($ID_imovel);
+       
+        $imovelModel = new \App\Models\ImovelModel();
+
+        $imovelModel->where('ID_imovel', $ID_imovel);
+        $imovelModel->delete();
+
+        $enderecoModel = new \App\Models\enderecoModel();
+        
+        $enderecoModel->where('ID_Endereco', $ID_enderecoImovel[0]['ID_Endereco']);
+        $enderecoModel->delete();
+        
+        
+
+        
+        return redirect()->to(base_url('meusimoveis'));
+        
     }
 
 }

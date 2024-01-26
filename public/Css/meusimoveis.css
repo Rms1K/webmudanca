@@ -99,12 +99,6 @@ body{
     left: 251px;
 }
 
-#conteudo h1{
-    position: absolute;
-    top: 20px;
-    left: 50px;
-}
-
 .sessaoImoveis{
     width: 100%;
     margin-top: 170px;
@@ -113,26 +107,46 @@ body{
 }
 
 .imoveis-container{
+    width: 1260px;
+    height: 640px;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    align-items: center;
+   
 }
 
 .imovel{
     width: 300px;
-    border: 1px dashed rgb(255, 140, 0);
-    height: 285px;
+    height: 290px;
     margin-left: 20px;
     margin-right: 20px;
-    margin-top: 50px;
-    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
     position: relative;
+    border: 2px solid rgb(255, 140, 0);
 }
 
+.pagination a{
+    color:white;
+    
+}
+
+.pagination{
+   
+   position: absolute;
+   bottom: -20px;
+   right: 210px;
+   
+}
+
+.page-item a{
+    background-color: rgb(255, 140, 0);
+}
 
 .bnt-ver{
     position: absolute;
@@ -153,9 +167,12 @@ body{
     position: absolute;
     left: 220px;
     top: 245px;
+}
+
+.bnt-Excluir form input{
     width: 70px;   
 }
-.bnt-ver a, .bnt-editar a, .bnt-Excluir a{
+.bnt-ver a, .bnt-editar a, .bnt-Excluir form input{
     /* position: absolute;
     right: 20px; */
     color: whitesmoke;
@@ -165,22 +182,27 @@ body{
     padding: 6px;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
     
 }
 
 
 .fotos{
-    width: 260px;
-    height: 260px;
+    width: 290px;
+    height: 290px;
     display: flex;
     flex-flow: column wrap;
     align-items: center;
+    box-shadow: 0 0 30px #000000;
 }
 
 .fotos img {
     width: 180px;
     height: 180px;
     margin: 15px;
+    box-shadow: 0 0 30px #000000;
 }
 
 .fotos h2 {

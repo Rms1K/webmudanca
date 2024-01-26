@@ -31,6 +31,7 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+$routes->get('sobre', 'Home::Sobre');
 $routes->get('recuperacaosenha', 'Home::recuperacaoSenha');
 $routes->get('imovel/(:num)', 'Home::imovel/$1');
 
@@ -49,6 +50,8 @@ $routes->get('editarsenha', 'EditarDados::viewNovaSenha');
 $routes->post('senhaeditar', 'EditarDados::senhaEditar');
 $routes->post('dadosparaeditar', 'EditarDados::dadosparaEditar');
 $routes->post('excluirconta', 'EditarDados::excluirConta');
+$routes->post('excluirimovel', 'EditarDados::excluirImovel');
+
 
 
 $routes->get('cadastrousuario', 'Cadastros::cadastroUsuario');

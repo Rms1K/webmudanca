@@ -35,9 +35,9 @@
             <a href="<?= base_url('/'); ?>"><img class="logo" src="img/logo.png" alt="WebMudança LOGO"></a>
             <ul>
                 <li><a href="#carousel">Imoveis</a></li>
-                <li><a href="#pesq-sobre">Sobre</a></li>
-                <li><a href="#infos">Suporte</a></li>
-                <li><a href="#infos">Contatos</a></li>
+                <li><a href="<?= base_url('sobre'); ?>">Sobre</a></li>
+                <li><a href="<?= base_url('/') ?>#footer">Suporte</a></li>
+                <li><a href="<?= base_url('/') ?>#footer">Contatos</a></li>
                 <li id="login"><a href="<?= base_url('login'); ?>">Entrar</a></li>
             </ul>
         </nav>
@@ -52,7 +52,7 @@
         <div class="txt-home texto-superior-esquerdo">
             <h2>Seu imóvel agora mais rápido</h2>
             <br>
-            <p> Comprar, alugar ou vender com + agilidade + praticidade + segurança</p>
+            <p> Comprar, alugar ou vender com + agilidade + praticidade + segurança.</p>
         </div>
 
         <div class="form-pesquisa">
@@ -84,7 +84,7 @@
                     echo '<div class="slide-container">';
                     foreach ($chunk as $i) {
                         echo '<div class="slide">';
-                        echo '<h2>' . $i['Tipo'] . ' - ' . $i['Aluguel_Venda'] . '</h2>';
+                        echo '<h2>' . ucfirst($i['Tipo']) . ' - ' . ucfirst($i['Aluguel_Venda']) . '</h2>';
                         echo '<img src="uploads/' . $i['Imagens'] . '" alt="Fotos do imóvel">';
                         echo '<div class="informacoes">';
                         echo '<ul>';
@@ -94,7 +94,8 @@
                         echo '<li>Vagas Garagem<hr><p>' . $i['NumeroVagasGaragem'] . '</p></li>';
                         echo '</ul>';
                         echo '<div class="preço">';
-                        echo '<p>Valor: ' . "R$ " . $i['Preco'] . '</p>';
+                        $aluguelMes = strtolower($i['Aluguel_Venda']) == 'aluguel' ? ' /Mês' : '';
+                        echo '<p>Valor: ' . "R$ " .number_format($i['Preco'], 2, ',', '.') .  $aluguelMes .'</p>';
                         echo '</div>';
                         echo '<div class="vermais">';
                         echo '<a href="' . base_url('imovel/' . $i['ID_imovel']) . '">Ver Mais</a>';
@@ -107,60 +108,31 @@
                 }
                 ?>
             </div>
-            <button id="prevBtn">Previous</button>
-            <button id="nextBtn">Next</button>
+
+            <div class="btnscarousel">
+                <button id="prevBtn">Anterior</button>
+                <button id="nextBtn">Próximo</button>
+            </div>
         </div>
 
     </main>
 
+  
 
+<footer id="footer">
 
-    <div class="sobre" id="pesq-sobre">
-        <div class="container">
-            <div class="half left">
-                <a href="<?= base_url('/'); ?>"><img src="img/logo-origin.jpg"></a>
-            </div>
-            <div class="half right">
-                <h2> SOBRE </h2>
-                <br>
-                <p style="text-align: justify;">A WebMudança é uma empresa voltada para o setor
-                    imobiliário da região do vale do Jequitinhonha, que tem como foco inicial a cidade de Araçuaí.
-                    A empresa nasceu com a missão de solucionar o problema que novos residentes da região
-                    tinham ao procurar imóveis tanto para alugar quanto comprar. Tendo em vista que a maioria
-                    das pessoas que têm a necessidade e/ou interesse de realizar mudança para cidade não
-                    conhecem a cidade o suficiente para realizar uma mudança conhecendo o mercado
-                    imobiliário da cidade. Dessa forma, criamos uma plataforma que possibilita que os
-                    interessados conheçam o mercado e tomem decisões levando em consideração todo o custo
-                    benefício.</p>
-            </div>
-        </div>
+    <div class="iconesFooter">
+        <a href=""><img src="icons/instagram.png" alt=""></a>
+        <a href=""><img src="icons/facebook.png" alt=""></a>
+        <a href=""><img src="icons/Twitter.png" alt=""></a>
     </div>
 
-    <div class="informações" id="infos">
-        <div class="container2">
-            <div class="half2 left">
-                <h2> Suporte </h2>
-                <br>
-                <div class="final">
-                    <p style="text-align:justify;">
-                        suportewebmudanca@gmail.com </br></br>
-                        (33) 99990780
-                    </p>
-                </div>
-            </div>
-            <div class="half2 right">
-                <h2> Contatos </h2>
-                <br>
-                <div class="final">
-                    <p>
-                        Venha ser nosso parceiro!
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
+                
+</footer>
 
-    <script>
+</body>
+
+<script>
     const carousel = document.querySelector('#carousel .carousel-inner');
     const slides = document.querySelectorAll('.slide');
     const slideCount = slides.length;
@@ -189,9 +161,5 @@
 
     
 </script>
-
-
-
-</body>
 
 </html>

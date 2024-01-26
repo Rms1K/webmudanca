@@ -89,6 +89,21 @@ class imovelModel extends Model
 
     }
 
+    public function getEnderecoImovel ($id){
+
+        $query = $this->db->table('imovel')->select('ID_Endereco')->where('ID_imovel', $id)->get();
+
+
+        if($this->returnType == 'object'){
+            return $query->getResult();
+        }else{
+            return $query->getResultArray();
+        }
+
+        return $query->getResult();
+
+    }
+
 
     public function deleteimovelByUser ($usuario){
 

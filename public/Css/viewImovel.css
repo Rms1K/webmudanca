@@ -8,7 +8,7 @@
 }
 
 body {
-    background-image: url(../../../m/public/img/preto-fosco.jpg);
+    background-image: url(../img/preto-fosco.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -85,6 +85,7 @@ main{
 }
 
 .fotos{
+    margin-top: 20px;
     width: 550px;
     height: 400px;
     position: absolute;
@@ -93,6 +94,11 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 0 30px #000000;
+}
+
+.fotos img{
+    box-shadow: 0 0 30px #000000;
 }
 
 .sessaoContainer{
@@ -127,6 +133,7 @@ main{
 }
 .informacoes ul li img{
     width: 30px;
+  
 }
 
 .informacoes ul li hr{

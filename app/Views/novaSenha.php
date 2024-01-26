@@ -116,9 +116,10 @@
         <nav id="nav">
             <a href="<?= base_url('/'); ?>"><img class="logo" src="img/logo.png" alt="WebMudança LOGO"></a>
             <ul>
-                <li><a href="">Suporte</a></li>
-                <li><a href="<?= base_url('/'); ?>#pesq-sobre">Sobre</a></li>
-                <li><a href="">Contatos</a></li>
+                
+                <li><a href="<?= base_url('sobre'); ?>">Sobre</a></li>
+                <li><a href="<?= base_url('/') ?>#footer">Suporte</a></li>
+                <li><a href="<?= base_url('/') ?>#footer">Contatos</a></li>
                 <li id="login"><a href="<?= base_url('login'); ?>">Entrar</a></li>
             </ul>
         </nav>
