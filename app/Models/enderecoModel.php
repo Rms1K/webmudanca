@@ -14,7 +14,7 @@ class enderecoModel extends Model
     protected $returnType     = 'array';
     protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['Rua','numImovel','Bairro',	'Cidade','Estado','CEP'];
+    protected $allowedFields = ['Rua','numImovel','Bairro',	'Cidade','Estado','CEP','ID_imovel'];
 
     // Dates
     protected $useTimestamps = false;
@@ -83,4 +83,33 @@ class enderecoModel extends Model
         return $query->getResult();
 
     }
+
+    public function getIdImovelBarraPesquisa($aluguel_venda, $tipoImovel, $enderecoImovel)
+        {
+            $query = $this->db->table('imovel')
+                ->join('endereco', 'imovel.ID_imovel = endereco.ID_imovel')
+                ->select('imovel.ID_imovel')
+                ->where('imovel.Aluguel_Venda', $aluguel_venda)
+                ->where('imovel.Tipo', $tipoImovel)
+                ->where(function ($query) use ($enderecoImovel) {
+                    $query->where('endereco.Cidade', 'LIKE', '%' . $enderecoImovel . '%')
+                        ->orWhere('endereco.Rua', 'LIKE', '%' . $enderecoImovel . '%')
+                        ->orWhere('endereco.Bairro', 'LIKE', '%' . $enderecoImovel . '%');
+                })
+                ->get();
+
+                // if ($query->getResult()) {
+                //     if ($this->returnType == 'object') {
+                //         return $query->getResult();
+                //     } else {
+                //         return $query->getResultArray();
+                //     }
+                // } else {
+                //     return null;  // ou outra indicação de nenhum resultado
+                // }
+
+                return $query->getResult();
+                
+        }
+
 }

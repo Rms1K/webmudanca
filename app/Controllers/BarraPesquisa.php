@@ -16,7 +16,13 @@ class BarraPesquisa extends BaseController
           'enderecoImovel' => $enderecoImovel
         ];
 
-        d($dadosPesquisa);
+        $enderecoModel = new \App\Models\enderecoModel();
+        
+        $imovelPesquisa = $enderecoModel->getIdImovelBarraPesquisa($aluguel_venda,$tipoImovel,$enderecoImovel);
+
+
+
+        d($imovelPesquisa);
        
     }
 

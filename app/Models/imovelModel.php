@@ -104,6 +104,8 @@ class imovelModel extends Model
 
     }
 
+    
+
 
     public function deleteimovelByUser ($usuario){
 

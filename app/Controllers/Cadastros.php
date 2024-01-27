@@ -49,6 +49,10 @@ class Cadastros extends BaseController
 
         $usuarioModel = new \App\Models\UsuarioModel();
 
+
+     
+
+
         // $verificaEmail = $usuarioModel->VerificaEmail($email);
         // $verificaUsuario = $usuarioModel->VerificaUsuario($usuario);
         
@@ -115,7 +119,7 @@ class Cadastros extends BaseController
             $img->move('uploads', $imgName);
         }
 
-       
+        
 
         $imovelData = [
             'Usuario' => $usuario,
@@ -129,7 +133,9 @@ class Cadastros extends BaseController
             'Imagens' => $imgName
         ];
 
+
         $imovelModel->insert($imovelData);
+        
 
         
         
@@ -157,6 +163,8 @@ class Cadastros extends BaseController
             'Estado' => $Estado,
             'CEP' => $Cep
             ];
+            
+          
 
          $enderecoModel = new \App\Models\enderecoModel();
          $enderecoModel->insert($enderecoData);
@@ -181,13 +189,15 @@ class Cadastros extends BaseController
         
 
         $imovelModel->set('ID_Endereco', $Endereco_ID[$qtdEndereco]);
-        $imovelModel->set('ID_Usuario', $idUsuario[0]);
         $imovelModel->where('ID_imovel', $imovel[$qtdImovel]['ID_imovel']);
         $imovelModel->update();
         
+        
+        $enderecoModel->set('ID_imovel', $imovel[$qtdImovel]['ID_imovel']);
+        $enderecoModel->where('ID_endereco', $Endereco_ID[$qtdEndereco]);
+        $enderecoModel->update();
 
-    
-         
+     
          $session->setFlashdata('msgConfirmaCadastro', 'Imóvel Cadastrado com sucesso!');
          return redirect()->to(base_url('cadastraImoveis'));
         
