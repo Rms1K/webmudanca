@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 26/01/2024 às 22:45
+-- Tempo de geração: 27/01/2024 às 18:18
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -47,21 +47,22 @@ CREATE TABLE `endereco` (
   `Bairro` varchar(50) NOT NULL,
   `Cidade` varchar(30) NOT NULL,
   `Estado` varchar(50) NOT NULL,
-  `CEP` varchar(15) NOT NULL
+  `CEP` varchar(15) NOT NULL,
+  `ID_imovel` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `endereco`
 --
 
-INSERT INTO `endereco` (`ID_Endereco`, `Rua`, `numImovel`, `Bairro`, `Cidade`, `Estado`, `CEP`) VALUES
-(8, 'sddsds', 123, 'Calhauzinho', 'Araçuaí', 'MG', '39600-000'),
-(9, 'Sacatrapos', 555, 'São Francisco', 'Araçuaí', 'MG', '39600-000'),
-(10, 'Olaria', 325, 'Centro', 'Araçuaí', 'MG', '39600-000'),
-(11, 'Principal', 32, 'Arraial', 'Araçuaí', 'MG', '39600-000'),
-(12, 'Santa Catarina', 666, 'Santa Tereza', 'Araçuaí', 'MG', '39600-000'),
-(13, 'Santa Barbara', 68, 'Santa Tereza', 'Araçuaí', 'MG', '39600-000'),
-(14, 'Floriano Peixoto', 444, 'Esplanada', 'Araçuaí', 'MG', '39600-000');
+INSERT INTO `endereco` (`ID_Endereco`, `Rua`, `numImovel`, `Bairro`, `Cidade`, `Estado`, `CEP`, `ID_imovel`) VALUES
+(8, 'sddsds', 123, 'Calhauzinho', 'Araçuaí', 'MG', '39600-000', 11),
+(9, 'Sacatrapos', 555, 'São Francisco', 'Araçuaí', 'MG', '39600-000', 12),
+(10, 'Olaria', 325, 'Centro', 'Araçuaí', 'MG', '39600-000', 13),
+(11, 'Principal', 32, 'Arraial', 'Araçuaí', 'MG', '39600-000', 14),
+(12, 'Santa Catarina', 666, 'Santa Tereza', 'Araçuaí', 'MG', '39600-000', 15),
+(13, 'Santa Barbara', 68, 'Santa Tereza', 'Araçuaí', 'MG', '39600-000', 16),
+(14, 'Floriano Peixoto', 444, 'Esplanada', 'Araçuaí', 'MG', '39600-000', 17);
 
 -- --------------------------------------------------------
 
@@ -129,7 +130,8 @@ INSERT INTO `usuario` (`ID_Usuario`, `NomeCompleto`, `Usuario`, `Email`, `Senha`
 -- Índices de tabela `endereco`
 --
 ALTER TABLE `endereco`
-  ADD PRIMARY KEY (`ID_Endereco`);
+  ADD PRIMARY KEY (`ID_Endereco`),
+  ADD KEY `endereco_ibfk_1` (`ID_imovel`);
 
 --
 -- Índices de tabela `imovel`
@@ -154,13 +156,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `endereco`
 --
 ALTER TABLE `endereco`
-  MODIFY `ID_Endereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `ID_Endereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de tabela `imovel`
 --
 ALTER TABLE `imovel`
-  MODIFY `ID_imovel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `ID_imovel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
@@ -171,6 +173,12 @@ ALTER TABLE `usuario`
 --
 -- Restrições para tabelas despejadas
 --
+
+--
+-- Restrições para tabelas `endereco`
+--
+ALTER TABLE `endereco`
+  ADD CONSTRAINT `endereco_ibfk_1` FOREIGN KEY (`ID_imovel`) REFERENCES `imovel` (`ID_imovel`) ON DELETE SET NULL;
 
 --
 -- Restrições para tabelas `imovel`
