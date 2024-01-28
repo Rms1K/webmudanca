@@ -1,0 +1,145 @@
+#nav {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+}
+
+.logo {
+    width: 150px;
+    height: 10vh;
+    margin-left: 20px;
+}
+
+body {
+    position: relative;
+}
+
+.alert {
+    width: 430px;
+    position: absolute;
+    top: 470px;
+    left: 500px;
+}
+
+#nav ul {
+    list-style: none;
+    display: flex;
+    margin-bottom: 0px;
+    margin-right: 20px;
+}
+
+#nav ul li {
+    letter-spacing: 3px;
+    margin-left: 32px;
+    padding-bottom: 10px;
+    padding-top: 10px;  
+}
+
+#nav a {
+    color: white;
+}
+
+#nav ul li a:hover {
+    color: rgb(255, 140, 0);
+    font-weight: 500;
+
+}
+
+#login a{
+    border: 2px solid rgb(255, 140, 0);
+    border-radius: 8px;
+    background-color: rgb(255, 140, 0);
+    padding:9px ;
+    
+}
+
+#login a:hover{
+    background-color: black;
+    color: rgb(255, 140, 0); 
+    cursor: pointer;
+}
+
+/* Fim Nav Bar */
+
+.container{
+    margin-top: 40px;
+}
+
+
+.txt-home {
+    color: white;
+    position: relative;
+    padding: 15px;
+    border-radius: 15px;
+    width: 40%;
+}
+
+.texto-superior-esquerdo {
+    position: absolute;
+    top: 11%;
+    left: 9.5%;
+}
+
+.sobre {
+    color: white;
+    background-color: rgba(26, 26, 26, 0.897);
+    margin-inline: 2%;
+}
+
+.sobre img{
+    width: 600px;
+    height: 300px;
+    margin-top: 10%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.half {
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.right{  
+    margin-top: 100px;
+    margin-bottom: 150px;
+}
+
+.half-txt{
+    margin-inline: 50px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.informações{
+    color: white;
+    text-align: center;
+}
+
+.final{
+    color: white;
+    height: 200px;
+}
+
+.container2 {
+    display: flex;
+    justify-content: center;
+}
+
+.half2 {
+    background-color: rgba(26, 26, 26, 0.897);
+    margin-inline: 150px;
+    margin-bottom: 0px;
+    width: 50%;
+    padding: 40px;
+    margin-top: 50px;
+    margin-bottom: 5%;
+}

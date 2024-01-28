@@ -84,3 +84,25 @@ INFO - 2024-01-28 22:03:27 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-01-28 22:03:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-01-28 22:03:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-01-28 22:04:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-28 22:04:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-28 22:05:16 --> Illegal offset type
+in SYSTEMPATH\Database\BaseBuilder.php on line 741.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(698): CodeIgniter\Database\BaseBuilder->whereHaving('QBWhere', Object(Closure), null, 'AND ', null)
+ 2 APPPATH\Models\enderecoModel.php(94): CodeIgniter\Database\BaseBuilder->where(Object(Closure))
+ 3 APPPATH\Controllers\BarraPesquisa.php(21): App\Models\enderecoModel->getIdImovelBarraPesquisa('aluguel', '', '')
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\BarraPesquisa->dadosPesquisa()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BarraPesquisa))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-28 22:06:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-28 22:08:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-28 22:08:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-28 22:08:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-28 22:08:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-28 22:08:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-28 22:08:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-28 22:08:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-28 22:08:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-28 22:08:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-28 22:08:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-28 22:09:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
