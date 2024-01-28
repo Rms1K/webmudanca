@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="Css/styleIndex.css">
     <style>
         body {
-            background-image: url(img/preto-fosco.jpg);
+            background-image: url(img/azul..jpg);
             background-size: cover;
             background-position: center;
         }
@@ -46,7 +46,7 @@
 
     <main>
         <section class="banner">
-            <img src="img/img1.jpg" alt="">
+            <img src="img/img1.png" alt="">
         </section>
 
         <div class="txt-home texto-superior-esquerdo">
