@@ -7,130 +7,12 @@
     <link rel="stylesheet" href="Css/viewLogin.css">
     <style>
         *{margin: 0; padding: 0; box-sizing: border-box; text-decoration: none; font-family: 'Times New Roman', Times, serif;}
-
-         /* Nav bar*/
-        #nav {
-            width: 100%;
-            height: 10vh;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: black;
-        }
-
-        .logo {
-            width: 150px;
-            height: 10vh;
-            margin-left: 20px;
-
-        }
-
-        #nav ul {
-            list-style: none;
-            display: flex;
-            margin-right: 20px;
-            margin-bottom: 0px;
-        }
-
-        #nav ul li {
-            letter-spacing: 3px;
-            margin-left: 32px;
-            padding-bottom: 10px;
-            padding-top: 10px;
-        }
-
-        #nav a {
-            color: white;
-        }
-
-        #nav ul li a:hover {
-            color: rgb(255, 140, 0);
-            font-weight: 500;
-
-        }
-
-
-        /* Fim da nav bar */
         body {
-            position: relative;
-            margin: 0 auto;
-            background-image: url(img/preto-fosco.jpg);
-            background-size: cover;
-            background-position: center;
+        background-image: url(img/azul..jpg);
+        background-size: cover;
+        background-position: center;
         }
-
-        .sessao-login {
-            color: whitesmoke;
-            border-radius: 10px;
-            border: 1px solid rgb(255, 140, 0);
-            border: 1px solid rgb(255, 140, 0);
-            width: 350px;
-            height: 350px;
-            position: absolute;
-            left: 490px;
-            top: 160px;
-        }
-
-        .container {
-            margin-top: 40px;
-        }
-
-        .formulario-login {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            row-gap: 15px;
-        }
-
-        .formulario-login input {
-            width: 265px;
-            padding: 10px;
-            border: none;
-            border-radius: 8px;
-        }
-
-        .btn-login {
-            width: 270px;
-            padding: 10px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-        .btn-criarConta {
-            width: 265px;
-            padding: 10px;
-            border: none;
-            border-radius: 8px;
-            position: absolute;
-            top: 270px;
-            left: 43px;
-            cursor: pointer;
-
-        }
-
-        .formulario-login a {
-            color: white;
-            font-size: 16px;
-        }
-
-        .hr {
-            border: none;
-            height: 1px;
-            background-color: white;
-            margin: 225px 25px;
-            position: absolute;
-            width: 80%;
-            top: 20px;
-        }
-
-        .alert{
-            width: 300px;
-            position: absolute;
-            top: 550px;
-            left: 520px;
-        }
-
+       
         
     </style>
 </head>
@@ -142,9 +24,6 @@
             <a href="<?= base_url('/'); ?>"><img class="logo" src="img/logo.png" alt="WebMudança LOGO"></a>
             <ul>
                 <li><a href="<?= base_url('/'); ?>">Home</a></li>
-                <li><a href="<?= base_url('sobre'); ?>">Sobre</a></li>
-                <li><a href="<?= base_url('/') ?>#footer">Suporte</a></li>
-                <li><a href="<?= base_url('/') ?>#footer">Contatos</a></li>
             </ul>
         </nav>
 
