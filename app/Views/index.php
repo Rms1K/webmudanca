@@ -54,7 +54,7 @@
         </div>
 
         <div class="form-pesquisa">
-            <form method="POST" action="<?= base_url('dadosPesquisa'); ?>" id="formPesquisa">
+            <form method="POST" action="<?= base_url('dadospesquisa'); ?>">
                 <select name="aluguel_venda" id="aluguel_venda">
                     <option value="aluguel">Aluguel</option>
                     <option value="venda">Venda</option>
@@ -72,6 +72,9 @@
 
         <a class="link-anuncie" href="<?= base_url('login'); ?>">Anuncie seu imóvel grátis</a>
 
+      
+        
+        
 
         <div id="carousel">
             <div class="carousel-inner">
@@ -112,10 +115,8 @@
                 <button id="nextBtn">Próximo</button>
             </div>
         </div>
-
     </main>
 
-  
 
 <footer id="footer">
 

@@ -113,31 +113,66 @@ class imovelModel extends Model
 
     }
 
-    public function getIdImovelBarraPesquisa($aluguel_venda, $tipoImovel, $enderecoImovel)
+
+
+    public function getIdImovelBarraPesquisa($tipoImovel, $aluguel_venda,$idBarra)
     {
-        $builder = $this->db->table('imovel');
-        
-        // Adicione cláusulas WHERE conforme necessário com base nos parâmetros fornecidos
-        if ($aluguel_venda) {
-            $builder->where('Aluguel_Venda', $aluguel_venda);
-        }
 
-        if ($tipoImovel) {
-            $builder->where('Tipo', $tipoImovel);
-        }
+            // $builder = $this->db->table('imovel');
 
-        if ($enderecoImovel) {
-            // Adicione cláusulas para buscar pelo endereço, dependendo da sua estrutura de banco de dados
-            // Exemplo: $builder->where('endereco_column', $enderecoImovel);
-        }
+            // $query = $builder->select('*')->groupStart()->where('Tipo', $tipoImovel)->where('Aluguel_Venda', $aluguel_venda)->groupEnd()->get();
 
-        // Execute a consulta e retorne os resultados
-        $query = $builder->get();
+            $builder = $this->db->table('imovel');
 
-        if ($this->returnType == 'object') {
+            if ($tipoImovel == NULL && $idBarra == NULL) {
+                $query = $builder->select('*')->where('Aluguel_Venda', $aluguel_venda)->get();
+            } else {
+                $query = $builder->select('*')
+                    ->groupStart()
+                        ->where('Tipo', $tipoImovel)
+                        ->Where('Aluguel_Venda', $aluguel_venda)
+                        ->Where('ID_endereco', $idBarra)
+                    ->groupEnd()
+                    ->get();
+            }
+
+
+            // if($tipoImovel == NULL ){
+            //     $query = $builder->select('*')->where('Aluguel_Venda', $aluguel_venda)->get();
+            //     // $query = $this->db->query("SELECT * FROM imovel WHERE Aluguel_Venda = '$aluguel_venda' AND ID_endereco = '$idBarra'");
+            // }
+            // else if ($idBarra == NULL){
+            //     $query = $builder->select('*')->where('Aluguel_Venda', $aluguel_venda)->Where('Aluguel_Venda', $aluguel_venda)->get();
+            //     // $query = $builder->select('*')->where('Tipo', $tipoImovel)->Where('Aluguel_Venda', $aluguel_venda)->get();
+            //     // $query = $this->db->query("SELECT * FROM imovel WHERE Tipo = '$tipoImovel' AND Aluguel_Venda = '$aluguel_venda'");       
+            // }
+
+            
+            // else if ($tipoImovel == NULL && $idBarra == NULL){
+            //     $query = $builder->select('*')->groupStart()->Where('Aluguel_Venda', $aluguel_venda)->groupEnd()->get();
+            //     // $query = $this->db->query("SELECT * FROM imovel WHERE Aluguel_Venda = '$aluguel_venda'");
+            // }else{
+            //     $query = $builder->select('*')->groupStart()->where('Tipo', $tipoImovel)->Where('Aluguel_Venda', $aluguel_venda)->Where('ID_endereco', $idBarra)->groupEnd()->get();
+
+
+            // // }
+
+            if ($query->getResult()) {
+                if ($this->returnType == 'object') {
+                    return $query->getResult();
+                } else {
+                    return $query->getResultArray();
+                }
+            } else {
+                return null;  // ou outra indicação de nenhum resultado
+            }
+
             return $query->getResult();
-        } else {
-            return $query->getResultArray();
-        }
+            
     }
+
+    
 }
+
+    
+    

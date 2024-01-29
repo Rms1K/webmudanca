@@ -21,6 +21,9 @@ class Home extends BaseController
             'usuario' => $usuario
         ];
 
+
+        
+
         return view ('index', $dadosImoveis);
     }
 

@@ -98,32 +98,32 @@ class enderecoModel extends Model
 
     }
 
-    public function getIdImovelBarraPesquisa($aluguel_venda, $tipoImovel, $enderecoImovel)
-        {
-            $query = $this->db->table('imovel')
-                ->join('endereco', 'imovel.ID_imovel = endereco.ID_imovel')
-                ->select('imovel.ID_imovel')
-                ->where('imovel.Aluguel_Venda', $aluguel_venda)
-                ->where('imovel.Tipo', $tipoImovel)
-                ->where(function ($query) use ($enderecoImovel) {
-                    $query->where('endereco.Cidade', 'LIKE', '%' . $enderecoImovel . '%')
-                        ->orWhere('endereco.Rua', 'LIKE', '%' . $enderecoImovel . '%')
-                        ->orWhere('endereco.Bairro', 'LIKE', '%' . $enderecoImovel . '%');
-                })
-                ->get();
+    public function getIdEnderecoBarraPesquisa($enderecoImovel)
+    {
+            
+            $builder = $this->db->table('endereco');
 
-                // if ($query->getResult()) {
-                //     if ($this->returnType == 'object') {
-                //         return $query->getResult();
-                //     } else {
-                //         return $query->getResultArray();
-                //     }
-                // } else {
-                //     return null;  // ou outra indicação de nenhum resultado
-                // }
+            
+            $query = $builder->select('*')
+                            ->groupStart()
+                                ->like('Bairro', $enderecoImovel)
+                                ->orLike('Rua', $enderecoImovel)
+                                ->orLike('Cidade', $enderecoImovel)
+                            ->groupEnd()
+                            ->get();
 
-                return $query->getResult();
-                
-        }
+            if ($query->getResult()) {
+                if ($this->returnType == 'object') {
+                    return $query->getResult();
+                } else {
+                    return $query->getResultArray();
+                }
+            } else {
+                return null;  // ou outra indicação de nenhum resultado
+            }
+
+            return $query->getResult();
+            
+    }
 
 }
