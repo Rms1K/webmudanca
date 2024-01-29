@@ -14,9 +14,7 @@
 </head>
 
 <script>
-
-    window.onload = function() {
-        
+    window.onload = function () {
         var sessaoExistente = <?= json_encode($usuario) ?>;
         function verificarSessao() {
             if (sessaoExistente) {
@@ -24,7 +22,7 @@
             }
         }
 
-       verificarSessao();
+        verificarSessao();
     }
 </script>
 
@@ -56,7 +54,7 @@
         </div>
 
         <div class="form-pesquisa">
-            <form method="POST" action="<?= base_url('dadospesquisa'); ?>">
+            <form method="POST" action="<?= base_url('dadosPesquisa'); ?>" id="formPesquisa">
                 <select name="aluguel_venda" id="aluguel_venda">
                     <option value="aluguel">Aluguel</option>
                     <option value="venda">Venda</option>
@@ -161,5 +159,23 @@
 
     
 </script>
+
+<script>
+    document.getElementById('formPesquisa').addEventListener('submit', function (event) {
+        event.preventDefault(); // Impede o envio padrão do formulário
+        buscarImoveis();
+    });
+
+    function buscarImoveis() {
+        // Obter os valores do formulário
+        var aluguelVenda = document.getElementById('aluguel_venda').value;
+        var tipoImovel = document.getElementById('tipoImovel').value;
+        var enderecoImovel = document.getElementById('enderecoImovel').value;
+
+        // Redirecionar para a página de pesquisa com os parâmetros
+        window.location.href = "<?= base_url('dadospesquisa'); ?>" + "?aluguel_venda=" + aluguelVenda + "&tipoImovel=" + tipoImovel + "&enderecoImovel=" + enderecoImovel;
+    }
+</script>
+
 
 </html>

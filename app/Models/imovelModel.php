@@ -112,4 +112,32 @@ class imovelModel extends Model
         $this->db->table('imovel')->where('Usuario', $usuario)->delete();
 
     }
+
+    public function getIdImovelBarraPesquisa($aluguel_venda, $tipoImovel, $enderecoImovel)
+    {
+        $builder = $this->db->table('imovel');
+        
+        // Adicione cláusulas WHERE conforme necessário com base nos parâmetros fornecidos
+        if ($aluguel_venda) {
+            $builder->where('Aluguel_Venda', $aluguel_venda);
+        }
+
+        if ($tipoImovel) {
+            $builder->where('Tipo', $tipoImovel);
+        }
+
+        if ($enderecoImovel) {
+            // Adicione cláusulas para buscar pelo endereço, dependendo da sua estrutura de banco de dados
+            // Exemplo: $builder->where('endereco_column', $enderecoImovel);
+        }
+
+        // Execute a consulta e retorne os resultados
+        $query = $builder->get();
+
+        if ($this->returnType == 'object') {
+            return $query->getResult();
+        } else {
+            return $query->getResultArray();
+        }
+    }
 }

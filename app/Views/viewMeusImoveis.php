@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="Css/meusimoveis.css">
 
     <style>
-        body{background-image: url(img/preto-fosco.jpg); background-size: cover;
+        body{background-image: url(img/azul..jpg); background-size: cover;
         background-position: center; text-decoration: none; text-decoration: none !important;}
 
         
