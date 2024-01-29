@@ -9,7 +9,7 @@
     <style>
         body{
             position: relative;
-            background-image: url(img/preto-fosco.jpg); 
+            background-image: url(img/azul..jpg); 
             background-size: cover;
             background-position: center;
         }
