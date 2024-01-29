@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 27/01/2024 às 18:18
+-- Tempo de geração: 29/01/2024 às 22:07
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -62,7 +62,9 @@ INSERT INTO `endereco` (`ID_Endereco`, `Rua`, `numImovel`, `Bairro`, `Cidade`, `
 (11, 'Principal', 32, 'Arraial', 'Araçuaí', 'MG', '39600-000', 14),
 (12, 'Santa Catarina', 666, 'Santa Tereza', 'Araçuaí', 'MG', '39600-000', 15),
 (13, 'Santa Barbara', 68, 'Santa Tereza', 'Araçuaí', 'MG', '39600-000', 16),
-(14, 'Floriano Peixoto', 444, 'Esplanada', 'Araçuaí', 'MG', '39600-000', 17);
+(14, 'Floriano Peixoto', 422, 'Esplanada', 'Araçuaí', 'MG', '39600-000', 17),
+(24, 'Principal', 25, 'Arraial', 'Araçuaí', 'MG', '39600-000', 27),
+(25, 'Floriano Peixoto', 365, 'Esplanada', 'Araçuaí', 'MG', '39600-000', 28);
 
 -- --------------------------------------------------------
 
@@ -89,13 +91,15 @@ CREATE TABLE `imovel` (
 --
 
 INSERT INTO `imovel` (`ID_imovel`, `Usuario`, `Tipo`, `Aluguel_Venda`, `Preco`, `Area`, `NumeroQuartos`, `NumeroBanheiros`, `NumeroVagasGaragem`, `Imagens`, `ID_Endereco`) VALUES
-(11, 'adm', 'terreno', 'venda', 100.00, 100.00, 3, 2, 1, '1706289218_e4a04c451e42f869c3b6.jpg', 8),
-(12, 'adm', 'casa', 'aluguel', 500.00, 490.00, 4, 2, 2, '1706290841_892c44a9b652c57eb916.png', 9),
+(11, 'adm', 'terreno', 'venda', 100000.00, 150.00, 0, 0, 0, '1706289218_e4a04c451e42f869c3b6.jpg', 8),
+(12, 'adm', 'casa', 'aluguel', 3000.00, 490.00, 4, 2, 2, '1706290841_892c44a9b652c57eb916.png', 9),
 (13, 'adm', 'casa', 'venda', 99999999.99, 490.00, 4, 3, 2, '1706290954_dc239551e3b9a566f8ca.png', 10),
 (14, 'adm', 'casa', 'venda', 1550000.00, 300.00, 3, 2, 2, '1706291307_b6a4af90ae873e695fed.png', 11),
 (15, 'adm', 'casa', 'aluguel', 1500.00, 300.00, 3, 2, 2, '1706296335_ad73b8efc6e21368a41e.png', 12),
 (16, 'adm', 'casa', 'venda', 3000000.00, 420.00, 4, 3, 3, '1706296425_b58c11b6b3e527ecf5b9.png', 13),
-(17, 'adm', 'terreno', 'venda', 250000.00, 300.00, 0, 0, 0, '1706296938_f711140cef8a48936256.jpg', 14);
+(17, 'adm', 'terreno', 'venda', 200000.00, 200.00, 0, 0, 0, '1706488455_b920ee53b20a86230abe.jpg', 14),
+(27, 'adm', 'apartamento', 'venda', 200000.00, 100.00, 2, 1, 1, '1706562078_791b07210a97471347c8.jpg', 24),
+(28, 'adm', 'apartamento', 'aluguel', 3000.00, 150.00, 2, 1, 1, '1706562152_28170cbd2da90c1a1e1c.jpg', 25);
 
 -- --------------------------------------------------------
 
@@ -156,13 +160,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `endereco`
 --
 ALTER TABLE `endereco`
-  MODIFY `ID_Endereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `ID_Endereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de tabela `imovel`
 --
 ALTER TABLE `imovel`
-  MODIFY `ID_imovel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `ID_imovel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
