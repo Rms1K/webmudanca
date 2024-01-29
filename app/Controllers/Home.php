@@ -55,14 +55,27 @@ class Home extends BaseController
     {
 
         $imovelModel = new \App\Models\ImovelModel();
+        
         $imovel = $imovelModel->getimovelByID($id);
 
-        $dadosImovel = [
-            'imovel' => $imovel
-        ];
+        $enderecoModel = new \App\Models\enderecoModel();
+        
+        $enderecoModel->where('ID_Endereco',$imovel[0]['ID_Endereco']);
+        $enderecoImovel = $enderecoModel->findAll();
+        
 
+        $session = session();
+      
+        $usuario = $session->get('usuario');
 
         
+        $dadosImovel = [
+            'imovel' => $imovel,
+            'enderecoImovel' => $enderecoImovel,
+            'usuario' => $usuario
+        ];
+
+ 
         return view ('viewImovel', $dadosImovel);
     }
 

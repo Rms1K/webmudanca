@@ -203,6 +203,11 @@ main{
 
 }
 
+.maisInformacoes p{
+   font-size: 22px;
+   margin-top: -45px;
+}
+
 
 
 .fotos h2 {
@@ -216,4 +221,52 @@ main{
 
 .fotos h2 span::first-letter {
     text-transform: uppercase;
+}
+
+
+
+.contatoProorietario ul{
+    display: flex;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 50px;
+    right: 210px;
+}
+
+.contatoProorietario p{
+    color: whitesmoke;
+}
+.contatoProorietario ul li {
+    margin: 10px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    row-gap: 10px;
+}
+.contatoProorietario ul li img{
+    width: 30px;
+  
+}
+
+
+.contatoProorietario{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contatoProorietario div img{
+    width: 40px;
+}
+.contatoProorietario div{
+    display: flex;
+    align-items: center;
+    flex-flow: row nowrap;
+    color: whitesmoke;
 }
