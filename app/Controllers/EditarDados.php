@@ -216,5 +216,105 @@ class EditarDados extends BaseController
         
     }
 
+    public function dadosEditarImovel (){
+         
+        $tipo = $this->request->getPost('tipo');
+        $aluguel_venda = $this->request->getPost('aluguel_venda');
+        $preco = $this->request->getPost('preco');
+        $area = $this->request->getPost('area_total');
+        $numeroQuartos = $this->request->getPost('num_quartos');
+        $numeroBanheiros = $this->request->getPost('num_banheiros');
+        $numeroVagasGaragem = $this->request->getPost('num_vagas_garagem');
+       
+        $img = $this->request->getFile('arquivo');
+
+        $ID_imovel = $this->request->getPost('ID_imovel');
+        $ID_Endereco = $this->request->getPost('ID_Endereco');
+
+
+        
+        $imovelModel = new \App\Models\ImovelModel();
+
+
+        
+     
+        if($img->isValid() && ! $img->hasMoved()){
+            $imgName = $img->getRandomName();
+            $img->move('uploads', $imgName);
+
+            $imovelModel->set('Imagens', $imgName);
+        }
+
+
+        $imovelModel->set('Tipo', $tipo);
+        $imovelModel->set('Aluguel_Venda', $aluguel_venda);
+        $imovelModel->set('Preco', $preco);
+        $imovelModel->set('Area', $area);
+        $imovelModel->set('NumeroQuartos', $numeroQuartos);
+        $imovelModel->set('NumeroBanheiros', $numeroBanheiros);
+        $imovelModel->set('NumeroVagasGaragem', $numeroVagasGaragem);
+        $imovelModel->where('ID_imovel', $ID_imovel);
+        $imovelModel->update();
+
+
+
+       
+        $Rua = $this->request->getPost('endereco');
+        $numImovel = $this->request->getPost('numImovel');
+        $Bairro = $this->request->getPost('bairro');
+        $Cidade = $this->request->getPost('cidade');
+        $Estado = $this->request->getPost('estado');
+        $Cep = $this->request->getPost('cep');
+
+         
+        $enderecoData = [
+            'Rua' => $Rua,
+            'numImovel' => $numImovel,
+            'Bairro' => $Bairro,
+            'Cidade' => $Cidade,
+            'Estado' => $Estado,
+            'CEP' => $Cep
+        ];
+            
+
+
+        $enderecoModel = new \App\Models\enderecoModel();
+
+      
+
+        $enderecoModel->set('Rua', $Rua);
+        $enderecoModel->set('numImovel', $numImovel);
+        $enderecoModel->set('Bairro', $Bairro);
+        $enderecoModel->set('Cidade', $Cidade);
+        $enderecoModel->set('Estado', $Estado);
+        $enderecoModel->set('CEP', $Cep);
+        $enderecoModel->where('ID_imovel', $ID_imovel);
+        $enderecoModel->update();
+
+        return redirect()->to(base_url('meusimoveis'));
+        
+    }
+
+    public function editarImovel($id)
+    {
+       
+
+        $imovelModel = new \App\Models\ImovelModel();
+        $imovel = $imovelModel->getimovelByID($id); 
+
+        $enderecoModel = new \App\Models\enderecoModel();
+
+        $enderecoImovel = $enderecoModel->getEnderecoById($id);
+
+        
+
+        $imovel = [
+            'Imovel' => $imovel,
+            'enderecoImovel' => $enderecoImovel
+        ];
+        
+        return view ('editarimovel', $imovel);
+    }
+
 }
 

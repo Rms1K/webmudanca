@@ -1,4 +1,4 @@
-*{margin: 0; padding: 0; box-sizing: border-box; text-decoration: none; font-family: 'Times New Roman', Times, serif;}
+*{margin: 0; padding: 0; box-sizing: border-box; text-decoration: none !important; font-family: 'Times New Roman', Times, serif;}
 
 #nav {
     width: 100%;
@@ -8,12 +8,13 @@
     align-items: center;
     background-color: black;
     border-bottom: 1px dashed rgb(255, 140, 0);
+    font-size: 15px;
 }
 
 .logo{
     width: 150px;
     height: 9vh;
-    
+ 
 }
 
 body{
@@ -25,7 +26,6 @@ body{
     list-style: none;
     display: flex;
     margin-left: 700px;
-    align-items: center;
 }
 
 #nav ul li{
@@ -37,7 +37,6 @@ body{
 
 #nav a{
     color: white;
-    
 }
 
 #nav ul li a:hover{
@@ -92,6 +91,7 @@ body{
     border-radius: 30px;
     margin-top: 45px;
     margin-bottom: -20px;
+    font-size: 15px;
 }
 
 #conteudo{
@@ -158,7 +158,7 @@ body{
 
 }
 
-.bnt-editar{
+.bnt-editar button{
     position: absolute;
     left: 135px;
     top: 245px;
@@ -175,7 +175,7 @@ body{
 .bnt-Excluir form input{
     width: 70px;   
 }
-.bnt-ver a, .bnt-editar a, .bnt-Excluir form input{
+.bnt-ver a, .bnt-editar button, .bnt-Excluir form input{
     /* position: absolute;
     right: 20px; */
     color: whitesmoke;
@@ -215,4 +215,130 @@ body{
 }
 .fotos h2::first-letter {
     text-transform: uppercase;
+}
+
+
+#modal {
+     
+    position: absolute;
+    top: 5%;
+    left: 7%;
+   
+    padding: 20px;
+    border: 1px solid #606062;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 574px;
+    background-image: url(../img/preto-fosco.jpg); 
+    background-size: cover;
+    background-position: center; 
+    text-decoration: none;
+    color: whitesmoke;
+    z-index: 1;
+}
+
+
+  #btnFecharModal input{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 9px;
+    top: 9px;
+  }
+
+.formulario-cadastro{
+    width: 200px;
+    height: 75vh;
+}
+
+.divForm-infosBasicas{
+    position: absolute;
+    left: 300px;
+    top: 131px;
+    color: white;
+    margin-top: 10px;
+}
+
+.tipoImovel{
+    position: absolute;
+    left: -120px;
+    top: -60px;
+}
+
+.aluguel_venda{
+    position: absolute;
+    left: -280px;
+    top: -60px;
+
+}
+.infosImovel{
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.divForm-Localizacao{
+    position: absolute;
+    left: 20px;
+    top: 150px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+ 
+}
+
+
+.divForm-addImgs{
+    position: absolute;
+    left: 600px;
+    top: 90px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.divForm-addImgs img{
+    box-shadow: 0 0 30px #000000;
+    width: 350px;
+    height: 250px;
+}
+
+.divForm-termo{
+    position: absolute;
+    left: 600px;
+    top: 390px;
+}
+
+.divForm-btnCadastrar{
+    position: absolute;
+    left: 315px;
+    top: 500px;
+    
+}
+
+
+.divForm-btnCadastrar button, .divForm-btnCadastrar a input{
+    width: 180px;
+    border: 1px dashed black;
+    padding: 7px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+
+.formulario-cadastro h2{
+    color: white;
+    position: absolute;
+    left: 20px;
+}
+
+.divForm-tipo select{
+    width: 150px;
+    height: 35px;
+    border: 1px dashed black;
+    padding: 7px;
+    cursor: pointer;
 }

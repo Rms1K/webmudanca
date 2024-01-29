@@ -52,7 +52,8 @@ $routes->post('dadosparaeditar', 'EditarDados::dadosparaEditar');
 $routes->post('excluirconta', 'EditarDados::excluirConta');
 $routes->post('excluirimovel', 'EditarDados::excluirImovel');
 
-
+$routes->post('dadoseditarimovel', 'EditarDados::dadosEditarImovel'); 
+$routes->get('editarimovel/(:num)', 'EditarDados::editarImovel/$1'); 
 
 $routes->get('cadastrousuario', 'Cadastros::cadastroUsuario');
 $routes->get('cadastraimovel', 'Cadastros::cadastraimovel');

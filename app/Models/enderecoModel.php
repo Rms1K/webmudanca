@@ -70,6 +70,20 @@ class enderecoModel extends Model
 
     }
 
+    public function getEnderecoById ($id){
+
+        $query = $this->db->table('endereco')->where('ID_imovel', $id)->get();
+
+        if($this->returnType == 'object'){
+            return $query->getResult();
+        }else{
+            return $query->getResultArray();
+        }
+
+        return $query->getResult();
+
+    }
+
     public function getEnderecos($rua,$numImovel){
 
         $query = $this->db->table('endereco')->where('Rua', $rua)->where('numImovel', $numImovel)->get();
